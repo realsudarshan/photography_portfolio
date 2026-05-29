@@ -1,6 +1,5 @@
 import '../style/Footer.css';
-import profileImg from '../images/profileImg.jpg'; // replace with your image
-import { FaInstagram, FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -8,9 +7,9 @@ export default function Footer() {
       <div className="footer-container">
         {/* Profile Section */}
         <div className="footer-profile">
-          <img src={profileImg} alt="Profile" className="profile-img" />
-          <h3 className="profile-name">@RIVITHRANJUNA</h3>
-          <p className="profile-role">Photographer & Visual Storyteller</p>
+          <img src="/krishalimage2.jpg" alt="Profile" className="profile-img" />
+          <h3 className="profile-name">Krishal Shrestha</h3>
+          <p className="profile-role">Photographer & Videographer</p>
         </div>
 
         {/* Subscribe Section */}
@@ -26,21 +25,18 @@ export default function Footer() {
 
           {/* ✅ Social Icons moved here */}
           <div className="social-icons">
-            <a href="https://www.instagram.com/r_i_v_i_t_h/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/only__krishal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram size={24} />
             </a>
-            <a href="https://www.facebook.com/rivith.ranjuna/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/unique.krishal.17" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF size={24} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter size={24} />
             </a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© 2025 PhotoGallery. All rights reserved.</p>
+        <p>© 2025 Krishal Shrestha. All rights reserved.</p>
       </div>
     </footer>
   );

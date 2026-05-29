@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { FaInstagram, FaFacebookF, FaTwitter, FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaInstagram, FaFacebookF } from 'react-icons/fa';
 import '../style/Contact.css';
 
 export default function Contact() {
@@ -11,12 +11,6 @@ export default function Contact() {
   });
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
-  const [showHeading, setShowHeading] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setShowHeading(true), 300);
-    return () => clearTimeout(timeout);
-  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -51,68 +45,69 @@ export default function Contact() {
 
   return (
     <section className="contact-container">
-      <div className={`reach-out ${showHeading ? 'show' : ''}`}>
-        Reach out
-      </div>
+      <header className="contact-hero">
+        <p className="contact-eyebrow">Get in touch</p>
+        <h1>Let’s plan your next shoot</h1>
+        <p className="contact-subtitle">
+          Based in Kathmandu, Nepal. Available for portraits, events, and commercial videography.
+        </p>
+      </header>
 
-      <div className="contact-content">
-        {/* Map */}
-        <div className="contact-map">
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.01376927841!2d79.773705!3d6.927079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2595d2b2b2b2b%3A0x2b2b2b2b2b2b2b2b!2sColombo!5e0!3m2!1sen!2slk!4v1680000000000!5m2!1sen!2slk"
-            width="100%"
-            height="220"
-            style={{ border: 0, borderRadius: '12px', marginBottom: '1.5rem' }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+      <div className="contact-grid">
+        <div className="contact-left">
+          <div className="contact-map">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14124.072335002817!2d85.3001403!3d27.7172453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1908c5b8f6f1%3A0x6e3a6bb7702c0b70!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2snp!4v1730000000000!5m2!1sen!2snp"
+              width="100%"
+              height="240"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
 
-        <div className="contact-info">
-          <h2>Contact Us</h2>
-          <p>
-            <FaMapMarkerAlt style={{ marginRight: 6 }} />
-            Colombo, Sri Lanka
-          </p>
-          <p>
-            <FaPhoneAlt style={{ marginRight: 6 }} />
-            <a href="tel:+94775044731">+94 77 504 4731</a>
-          </p>
-          <p>
-            <FaWhatsapp style={{ marginRight: 6, color: '#25D366' }} />
-            <a
-              href="https://wa.me/94715868009"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Chat on WhatsApp
-            </a>
-          </p>
-          <p>
-            For speaking events, interviews, print or licensing requests:{' '}
-            <a href="mailto:rivithranjuna60@gmail.com" className="email-link">
-              rivithranjuna60@gmail.com
-            </a>
-          </p>
-          <div className="social-links">
-            <p>Connect with me on Social</p>
-            <div className="social-icons">
-              <a href="https://www.instagram.com/r_i_v_i_t_h/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={24} />
-              </a>
-              <a href="https://www.facebook.com/rivith.ranjuna/" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF size={24} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={24} />
-              </a>
+          <div className="contact-card">
+            <h2>Contact</h2>
+            <ul className="contact-list">
+              <li>
+                <FaMapMarkerAlt />
+                <span>Kathmandu, Nepal</span>
+              </li>
+              <li>
+                <FaPhoneAlt />
+                <a href="tel:+9779864029898">+977 9864029898</a>
+              </li>
+              <li>
+                <FaWhatsapp className="accent" />
+                <a href="https://wa.me/9779864029898" target="_blank" rel="noopener noreferrer">
+                  Chat on WhatsApp
+                </a>
+              </li>
+              <li>
+                <FaEnvelope />
+                <a href="mailto:krishalstha87@gmail.com">krishalstha87@gmail.com</a>
+              </li>
+            </ul>
+
+            <div className="social-links">
+              <p>Connect with me</p>
+              <div className="social-icons">
+                <a href="https://www.instagram.com/only__krishal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <FaInstagram size={22} />
+                </a>
+                <a href="https://www.facebook.com/unique.krishal.17" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <FaFacebookF size={22} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <form onSubmit={handleSubmit} className="contact-form">
+          <h2>Send a message</h2>
+          <p className="form-hint">Tell me about your project and preferred dates.</p>
           <input
             type="text"
             name="name"

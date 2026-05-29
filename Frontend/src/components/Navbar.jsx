@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 className="logo">PhotoGallery</h1>
+      <h1 className="logo">Krishal Shrestha</h1>
 
       {/* Hamburger toggle for mobile */}
       <button
