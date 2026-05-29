@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { apiUrl } from '../config/api';
 
 export default function AddOrEditBlog() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export default function AddOrEditBlog() {
   useEffect(() => {
     if (id) {
       setLoading(true);
-      fetch(`http://localhost:5000/api/blogs/${id}`)
+      fetch(apiUrl(`/api/blogs/${id}`))
         .then((res) => res.json())
         .then((data) => {
           setTitle(data.title);
@@ -33,9 +34,7 @@ export default function AddOrEditBlog() {
     if (media) formData.append('media', media); // ✅ append file
 
     const method = id ? 'PUT' : 'POST';
-    const url = id
-      ? `http://localhost:5000/api/blogs/${id}`
-      : 'http://localhost:5000/api/blogs';
+    const url = id ? apiUrl(`/api/blogs/${id}`) : apiUrl('/api/blogs');
 
     try {
       const res = await fetch(url, {

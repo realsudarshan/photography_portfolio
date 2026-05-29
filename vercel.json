@@ -1,5 +1,10 @@
 {
   "buildCommand": "cd Frontend && npm ci && npm run build",
   "outputDirectory": "Frontend/dist",
-  "framework": "vite"
+  "installCommand": "npm install && cd api && npm install",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

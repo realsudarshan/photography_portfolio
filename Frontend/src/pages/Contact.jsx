@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { apiUrl } from '../config/api';
 import '../style/Contact.css';
 
 export default function Contact() {
@@ -22,12 +23,18 @@ export default function Contact() {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/contacts', {
+      const res = await fetch(apiUrl('/api/contacts'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.subject
+            ? `Subject: ${form.subject}\n\n${form.message}`
+            : form.message,
+        }),
       });
 
       const data = await res.json();

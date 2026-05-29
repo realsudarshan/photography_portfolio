@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { apiUrl } from '../config/api';
 import '../style/Blog.css';
 
 export default function AddBlog() {
@@ -25,7 +26,7 @@ export default function AddBlog() {
     if (media) formData.append('media', media);
 
     try {
-      const res = await fetch('http://localhost:5000/api/blogs', {
+      const res = await fetch(apiUrl('/api/blogs'), {
         method: 'POST',
         body: formData,
       });

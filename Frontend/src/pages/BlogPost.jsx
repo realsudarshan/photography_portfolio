@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { apiUrl, mediaUrl } from '../config/api';
 import '../style/Blog.css';
 
 export default function BlogPost() {
@@ -10,7 +11,7 @@ export default function BlogPost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/blogs/${id}`);
+        const res = await fetch(apiUrl(`/api/blogs/${id}`));
         const data = await res.json();
         setPost(data);
       } catch (err) {
@@ -43,9 +44,9 @@ export default function BlogPost() {
 
       {post.mediaUrl && (
         post.mediaType === 'video' ? (
-          <video src={`http://localhost:5000${post.mediaUrl}`} controls style={{ width: '100%', borderRadius: '8px', marginBottom: '1rem' }} />
+          <video src={mediaUrl(post.mediaUrl)} controls style={{ width: '100%', borderRadius: '8px', marginBottom: '1rem' }} />
         ) : (
-          <img src={`http://localhost:5000${post.mediaUrl}`} alt="Blog Media" style={{ width: '100%', borderRadius: '8px', marginBottom: '1rem' }} />
+          <img src={mediaUrl(post.mediaUrl)} alt="Blog Media" style={{ width: '100%', borderRadius: '8px', marginBottom: '1rem' }} />
         )
       )}
 

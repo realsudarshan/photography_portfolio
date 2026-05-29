@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { apiUrl, mediaUrl } from '../config/api';
 import '../style/Blog.css';
 
 export default function Blog() {
@@ -13,7 +14,7 @@ export default function Blog() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/blogs');
+      const res = await fetch(apiUrl('/api/blogs'));
       const data = await res.json();
       setBlogs(data);
     } catch (err) {
@@ -26,7 +27,7 @@ export default function Blog() {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this blog?')) {
       try {
-        const res = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+        const res = await fetch(apiUrl(`/api/blogs/${id}`), {
           method: 'DELETE',
         });
         if (res.ok) {
@@ -68,9 +69,9 @@ export default function Blog() {
               {/* ✅ Display media thumbnail */}
               {post.mediaUrl && (
                 post.mediaType === 'video' ? (
-                  <video src={`http://localhost:5000${post.mediaUrl}`} controls style={{ width: '100%', borderRadius: '8px', marginBottom: '0.5rem' }} />
+                  <video src={mediaUrl(post.mediaUrl)} controls style={{ width: '100%', borderRadius: '8px', marginBottom: '0.5rem' }} />
                 ) : (
-                  <img src={`http://localhost:5000${post.mediaUrl}`} alt="Blog Media" style={{ width: '100%', borderRadius: '8px', marginBottom: '0.5rem' }} />
+                  <img src={mediaUrl(post.mediaUrl)} alt="Blog Media" style={{ width: '100%', borderRadius: '8px', marginBottom: '0.5rem' }} />
                 )
               )}
 

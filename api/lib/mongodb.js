@@ -15,7 +15,11 @@ export async function connectDB() {
     const opts = {
       bufferCommands: false,
     };
-    cached.promise = mongoose.connect(process.env.MONGODB_URI, opts);
+    const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
+    if (!uri) {
+      throw new Error('MONGODB_URI (or MONGO_URI) is not set');
+    }
+    cached.promise = mongoose.connect(uri, opts);
   }
   
   try {
