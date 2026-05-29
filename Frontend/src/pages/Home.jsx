@@ -73,15 +73,15 @@ export default function Home() {
       {/* ✅ Hero Section */}
       <section className="hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="hero-content">
-          <h1>Explore My World of Photography</h1>
+          <h1>Photography by Krishal Shrestha</h1>
           <button onClick={() => navigate('/portfolio')}>View Portfolio</button>
         </div>
       </section>
 
       {/* Existing Header */}
       <header className="page-header">
-        <h1>Welcome to PhotoGallery</h1>
-        <p>Capturing life’s beauty through the lens.</p>
+        <h1>Welcome</h1>
+        <p>Portraits, events, and commercial videography from Kathmandu.</p>
       </header>
 
       {/* Gallery with Spinner */}

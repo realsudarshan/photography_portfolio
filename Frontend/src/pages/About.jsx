@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import '../style/About.css';
-import aboutMe from '../images/aboutMe.jpg';  
+// Using public assets for photographer images
 
 export default function About() {
 
@@ -13,20 +13,19 @@ export default function About() {
         <div className="about-text-container">
           <h2 className="about-title">About Me</h2>
           <p className="about-text">
-            I’m a passionate photographer capturing timeless memories. Specializing in portraits, nature, and events. Every photo tells a story, and I'm here to help you tell yours.
+            I’m Krishal Shrestha, a photographer with 3 years of experience capturing real stories through images and video.
           </p>
           <p className="about-bio">
-            With over 7 years of experience, I have worked with clients across the country and my work has been featured in several exhibitions. My approach blends creativity with technical skill, ensuring every shot is unique.
+            I have worked in commercial videography and at Neo Struct Engineering and Builders. My approach blends creativity with technical skill to deliver clean, modern visuals.
           </p>
           <ul className="about-achievements">
-            <li>🏆 Winner, National Photography Award 2023</li>
-            <li>📸 Exhibited at City Art Gallery, 2022</li>
-            <li>🌍 Traveled to 15+ countries for photography projects</li>
+            <li>📷 Experience: 3 years</li>
+            <li>🎬 Commercial videography</li>
+            <li>🏗️ Neo Struct Engineering and Builders</li>
           </ul>
           <div className="about-links">
-            <a href="https://www.instagram.com/r_i_v_i_t_h/" target="_blank" rel="noopener noreferrer">Instagram</a> | 
-            <a href="https://www.facebook.com/rivith.ranjuna/" target="_blank" rel="noopener noreferrer">Facebook</a> | 
-            <a href="/resume.pdf" download>Download Resume</a>
+            <a href="https://www.instagram.com/only__krishal/" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+            <a href="https://www.facebook.com/unique.krishal.17" target="_blank" rel="noopener noreferrer">Facebook</a>
           </div>
           <button className="about-btn" onClick={() => navigate('/portfolio')}>
              View Portfolio
@@ -35,7 +34,7 @@ export default function About() {
         </div>
 
         <div className="about-image-container">
-          <img src={aboutMe} alt="About" className="about-image" />
+          <img src="/krihsalimage1.jpg" alt="About" className="about-image" />
         </div>
       </div>
     </section>

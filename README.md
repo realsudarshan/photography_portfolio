@@ -1,8 +1,8 @@
-# 📸 Photography Website
+# Photography Website
 
 A modern, full-stack photography portfolio website built with the MERN stack (MongoDB, Express.js, React, Node.js) and styled with Tailwind CSS.
 
-## ✨ Features
+## Features
 
 - **Portfolio Showcase**: Display photography work in organized galleries (Portrait, Nature, Events)
 - **Blog System**: Share photography stories, techniques, and adventures
@@ -10,10 +10,10 @@ A modern, full-stack photography portfolio website built with the MERN stack (Mo
 - **Contact Form**: Allow visitors to get in touch
 - **Responsive Design**: Mobile-first design with Tailwind CSS
 - **Media Upload**: Support for both images and videos
-- **Authentication**: Secure admin login system
+- **Authentication**: Placeholder UI (backend auth not implemented)
 - **Modern UI**: Clean, professional design with smooth animations
 
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library
@@ -28,7 +28,7 @@ A modern, full-stack photography portfolio website built with the MERN stack (Mo
 - **Multer** - File upload handling
 - **CORS** - Cross-origin resource sharing
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 photography-website/
@@ -50,18 +50,12 @@ photography-website/
 └── README.md
 ```
 
-## 🛠️ Installation & Setup
+## Installation and Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
 - MongoDB (local or cloud instance)
-- npm or yarn package manager
-
-### Clone the Repository
-```bash
-git clone https://github.com/Ranjuna120/photography-website.git
-cd photography-website
-```
+- pnpm or npm package manager
 
 ### Backend Setup
 1. Navigate to the backend directory:
@@ -71,19 +65,19 @@ cd Backend
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Create a `.env` file in the Backend directory:
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/photography-website
+MONGO_URI=mongodb://localhost:27017/photography-website
 # or use MongoDB Atlas connection string
 ```
 
 4. Start the backend server:
 ```bash
-npm start
+pnpm run dev
 ```
 
 The backend will run on `http://localhost:5000`
@@ -96,12 +90,12 @@ cd Frontend
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 The frontend will run on `http://localhost:5173`
@@ -121,7 +115,7 @@ The frontend will run on `http://localhost:5173`
 - `DELETE /api/blogs/:id` - Delete blog post
 
 ### Contact
-- `POST /api/contact` - Submit contact form
+- `POST /api/contacts` - Submit contact form
 
 ## 🎨 Features Overview
 
@@ -137,7 +131,6 @@ The frontend will run on `http://localhost:5173`
 - Admin management capabilities
 
 ### Admin Dashboard
-- Secure authentication
 - Content management
 - File upload system
 - Blog post editor
@@ -145,13 +138,12 @@ The frontend will run on `http://localhost:5173`
 ## 🔧 Configuration
 
 ### Environment Variables
-Create `.env` files in both Frontend and Backend directories:
+Create a `.env` file in the Backend directory:
 
 **Backend .env:**
 ```env
 PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+MONGO_URI=your_mongodb_connection_string
 ```
 
 ### Tailwind CSS
@@ -165,7 +157,7 @@ The website is fully responsive and optimized for:
 - Mobile phones
 - Various screen sizes
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
@@ -173,17 +165,11 @@ The website is fully responsive and optimized for:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📞 Contact
-
-**Ranjuna** - [@Ranjuna120](https://github.com/Ranjuna120)
-
-Project Link: [https://github.com/Ranjuna120/photography-website](https://github.com/Ranjuna120/photography-website)
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - React community for excellent documentation
 - Tailwind CSS for the amazing utility-first approach
@@ -191,5 +177,3 @@ Project Link: [https://github.com/Ranjuna120/photography-website](https://github
 - All photographers who inspire beautiful web design
 
 ---
-
-⭐ **Star this repository if you found it helpful!**
