@@ -10,6 +10,7 @@ const getAllPhotos = async (req, res) => {
 };
 
 const createPhoto = async (req, res) => {
+    console.log('Received photo creation request with body:', req.body);
     const { title, url, description } = req.body;
     try {
         const newPhoto = new Photo({ title, url, description });
